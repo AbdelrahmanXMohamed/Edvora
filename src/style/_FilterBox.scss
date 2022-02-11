@@ -1,0 +1,76 @@
+@font-face {
+  font-family: Sf-Pro-Display;
+  src: url("../assets/sf-pro-display-cufonfonts/SFPRODISPLAYREGULAR.OTF")
+    format("opentype");
+}
+
+.FilterBox {
+  background: #131313;
+  height: 275px;
+  width: 228px;
+  border-radius: 15px;
+  padding: 24px 34.55px 42.5px 25px;
+  margin-left: calc(min(5%, 41px));
+  margin-top: calc(min(5%.43px));
+  h3 {
+    font-family: Sf-Pro-Display;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #a5a5a5;
+    margin: 0;
+  }
+  hr {
+    margin-bottom: 36px;
+  }
+  .Select {
+    display: grid;
+    gap: 12.5px;
+    div {
+      position: relative;
+      //   width: 168.45px;
+      //   height: 37.5px;
+
+      .Select-Header {
+        color: white;
+        background: #232323;
+        border-radius: 4.68775px;
+        // width: 100%;
+        // height: 100%;
+        padding-block: 1.75px;
+        &-Content {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          font-family: Sf-Pro-Display;
+          font-size: 17px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 20px;
+          letter-spacing: 0px;
+          text-align: left;
+          margin: 8px 11.45px 7.5px 13px;
+          span:first-child {
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            width: 130px;
+          }
+          .Icon {
+            transform: rotate(-90deg);
+            fill: #a5a5a5;
+          }
+        }
+      }
+      select {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        opacity: 0;
+      }
+    }
+  }
+}

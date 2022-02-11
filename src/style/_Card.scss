@@ -1,0 +1,96 @@
+.CardWrapper {
+  margin-left: 20px;
+  padding: 12px 10px;
+  background: #232323;
+  border-radius: 4.687751770019531px;
+  min-width: 210px;
+  @media (orientation: portrait) {
+    margin: 0;
+  }
+  .Card {
+    font-family: Sf-Pro-Display;
+    font-style: normal;
+    font-weight: normal;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 126px;
+    img {
+      width: 70px;
+      height: 70px;
+      border-radius: 5px;
+    }
+    .Content {
+      display: flex;
+      flex-direction: column;
+      align-self: flex-start;
+      gap: 10px;
+      .Product-Name {
+        font-size: 15px;
+        line-height: 18px;
+        color: #ffffff;
+        max-width: 93px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+      }
+      .Brand-Name {
+        font-size: 13px;
+        line-height: 16px;
+        color: rgba(255, 255, 255, 0.6);
+        padding-left: 1px;
+      }
+      .Price {
+        display: flex;
+        font-size: 13px;
+        line-height: 16px;
+        color: #ffffff;
+        align-items: center;
+        margin-top: -1px;
+        span {
+          font-style: normal;
+          font-weight: 600;
+          font-size: 16px;
+          line-height: 19px;
+          color: rgba(255, 255, 255, 0.8);
+        }
+      }
+    }
+    .Location {
+      font-size: 13px;
+      line-height: 16px;
+      max-width: 90px;
+      color: rgba(255, 255, 255, 0.6);
+      align-self: center;
+      margin-top: 4px;
+    }
+    div {
+      align-self: center;
+      .Date-Label {
+        font-size: 11px;
+        line-height: 13px;
+
+        color: rgba(255, 255, 255, 0.6);
+      }
+      .Date {
+        font-weight: 500;
+        font-size: 13px;
+        line-height: 16px;
+
+        color: rgba(255, 255, 255, 0.6);
+      }
+    }
+    .Discription {
+      font-size: 11px;
+      line-height: 13px;
+      color: rgba(255, 255, 255, 0.6);
+      grid-column: span 2;
+      align-self: flex-end;
+    }
+  }
+  transition: 0.5s;
+
+  &:hover {
+    transform: scale(1.1);
+    transition: 0.5s;
+  }
+}
