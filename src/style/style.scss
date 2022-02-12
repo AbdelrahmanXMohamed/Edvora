@@ -6,13 +6,22 @@
   padding: 0;
   box-sizing: border-box;
 }
+@font-face {
+  font-family: Sf-Pro-Display-Bold;
+  src: url("../assets/sf-pro-display-cufonfonts/SFPRODISPLAYBOLD.OTF")
+    format("opentype");
+}
 body {
   background: #292929;
 }
 .App {
   display: grid;
-  grid-template-columns: 1fr 3fr;
-
+  grid-template-columns: 2fr 10fr;
+  gap: 20px;
+  width: 100%;
+  @media (max-width: 1050px) {
+    grid-template-columns: 1fr;
+  }
   h1 {
     font-family: Sf-Pro-Display;
     font-size: 35px;
@@ -48,51 +57,96 @@ body {
     color: #ffffff;
   }
   .Line {
-    width: 970px;
     margin-bottom: 12px;
   }
   .Wrapper {
     margin-bottom: 45px;
     display: flex;
   }
-  .AllProduct {
+  .AllProduct-Wrapper {
+    padding: 21px 20px 19px 20px;
     background: #131313;
-    width: 984px;
+    min-width: fit-content;
+    width: 100%;
     min-height: 190px;
     border-radius: 15px;
-    display: flex;
-    align-items: center;
+
+    .AllProduct {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      gap: 10px 20px;
+      @media (max-width: 1298px) {
+        gap: 10px 0px;
+      }
+    }
   }
 
-  @media (orientation: portrait) {
-    grid-template-columns: 1fr;
-    .AllProduct {
-      // flex-direction: column;
-      flex-wrap: wrap;
-      gap: 20px;
-      max-width: 600px;
-      width: 100%;
-      min-width: 300px;
-      align-items: center;
-      justify-content: center;
-      padding-block: 20px;
-    }
+  @media (max-width: 1322px) {
     .container {
-      margin: 10px;
-    }
-    .Line {
-      max-width: 600px;
-      width: 100%;
-      min-width: 300px;
+      margin-left: 10px;
     }
   }
+
+  // @media (orientation: portrait) {
+  //   .AllProduct {
+  //     // flex-direction: column;
+  //     flex-wrap: wrap;
+  //     gap: 20px;
+  //     max-width: 600px;
+  //     width: 100%;
+  //     min-width: 300px;
+  //     align-items: center;
+  //     justify-content: center;
+  //     padding-block: 20px;
+  //   }
+  //   .container {
+  //     margin: 10px;
+  //   }
+  //   .Line {
+  //     max-width: 600px;
+  //     width: 100%;
+  //     min-width: 300px;
+  //   }
+  // }
 }
 
 .arrow {
   fill: #fff;
   align-self: center;
-  margin-left: 25px;
+}
+.Section-Wrapper {
+  width: 100%;
+  display: grid;
+  grid-template-columns: minmax(auto, 984px) 1fr;
+  gap: 15px;
 }
 .Section {
-  position: relative;
+  width: 100%;
+}
+.Loading,
+.Error {
+  text-align: center;
+  font-family: Sf-Pro-Display-Bold;
+
+  display: grid;
+  height: 100vh;
+  place-items: center;
+}
+.Loading {
+  h3 {
+    color: rgba(255, 255, 255, 0.6);
+  }
+}
+.Error {
+  h3 {
+    color: #d93636;
+  }
+  button {
+    border: none;
+    border-radius: 4px;
+    background-color: #d93636;
+    padding: 10px;
+    color: white;
+  }
 }

@@ -21,11 +21,11 @@ export default function Card({ data }) {
             </span>
             <div>
                 <span className="Date-Label">
-                    Date:
+                    Date:              <span className="Date">
+                        {`${new Date(data.date).getDate()}:${new Date(data.date).getMonth()}:${new Date(data.date).getFullYear()}`}
+                    </span>
                 </span>
-                <span className="Date">
-                    {`${new Date(data.date).getDate()}:${new Date(data.date).getMonth()}:${new Date(data.date).getFullYear()}`}
-                </span>
+
 
             </div>
             <span className='Discription' >

@@ -11,7 +11,7 @@ export const state = createSlice({
         state: '',
         city: '',
         isLoading: false,
-        error: null
+        error: false
     },
     reducers: {
         fetchData: (state) => {
@@ -43,11 +43,16 @@ export const state = createSlice({
                 .filter(item => state.state ? item.address.state === state.state : true)
                 .filter(item => action.payload ? item.address.city === action.payload : true)
         },
+        gotError: (state) => {
+            state.error = true
+            state.isLoading = false
+
+        },
 
     },
 })
 
 // Action creators are generated for each case reducer function
-export const { gotData, fetchData, changeCity, changeProduct, changeState } = state.actions
+export const { gotData, fetchData, changeCity, changeProduct, changeState, gotError } = state.actions
 
 export default state.reducer

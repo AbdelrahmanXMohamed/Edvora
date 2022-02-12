@@ -1,12 +1,19 @@
 .CardWrapper {
-  margin-left: 20px;
+  // margin: 0 0 0 20px;
   padding: 12px 10px;
   background: #232323;
   border-radius: 4.687751770019531px;
-  min-width: 210px;
-  @media (orientation: portrait) {
-    margin: 0;
+  width: 210px;
+  height: 150px;
+  // &:first-child {
+  //   margin-left: 20px;
+  // }
+  @media (max-width: 1336px) {
+    margin: 0 auto;
   }
+  // @media (max-width: 1030px) {
+  //   margin: 0;
+  // }
   .Card {
     font-family: Sf-Pro-Display;
     font-style: normal;
@@ -62,6 +69,9 @@
       color: rgba(255, 255, 255, 0.6);
       align-self: center;
       margin-top: 4px;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
     }
     div {
       align-self: center;

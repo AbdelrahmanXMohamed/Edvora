@@ -23,18 +23,23 @@ export default function Section({ item }) {
     if (data.length !== 0)
         return (
             <>
-                <div className="Section">
-                    <h4>{item}</h4>
-                    <hr className="Line" />
-                    <div className="Wrapper">
-                        <div className="AllProduct">
-                            {data.slice(page * 4, page * 4 + 4).map((item, id) => <Card key={id} data={item} />)}
+                <div className="Section-Wrapper">
+                    <div className="Section">
+                        <h4>{item}</h4>
+                        <hr className="Line" />
+                        <div className="Wrapper">
+                            <div className="AllProduct-Wrapper">
+                                <div className="AllProduct">
+                                    {data.slice(page * 4, page * 4 + 4).map((item, id) => <Card key={id} data={item} />)}
+                                </div>
+                            </div>
+
                         </div>
-                        {data.length > 4 &&
-                            <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" className='arrow' onClick={handleNext} fillRule="evenodd" clipRule="evenodd">
-                                <path d="M4 .755l14.374 11.245-14.374 11.219.619.781 15.381-12-15.391-12-.609.755z" />
-                            </svg>}
                     </div>
+                    {data.length > 4 &&
+                        <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" className='arrow' onClick={handleNext} fillRule="evenodd" clipRule="evenodd">
+                            <path d="M4 .755l14.374 11.245-14.374 11.219.619.781 15.381-12-15.391-12-.609.755z" />
+                        </svg>}
                 </div>
             </>
         );
